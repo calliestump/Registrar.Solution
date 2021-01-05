@@ -7,8 +7,8 @@
 
 
   <h2>Enroll in a course:</h2>
-
-  <h4>Add course to student schedule: @Html.DisplayFor(model => model.StudentName)</h4>
+  <hr />
+  <h3>Add course to student schedule: @Html.DisplayFor(model => model.StudentName)</h3>
 
   @using (Html.BeginForm())
   {
@@ -19,5 +19,5 @@
 
     <input type="submit" value="Save"/>
   }
-  <p>@Html.ActionLink("Back to student list", "Index")</p>
+  <br><p>@Html.ActionLink("Back to student list", "Index")</p>
 </div>

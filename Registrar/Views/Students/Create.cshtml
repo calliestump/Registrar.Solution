@@ -4,20 +4,20 @@
 <div class="container">
   @model Registrar.Models.Student
 
-  <h1>Enroll new student:</h1>
-
+  <h1>Enroll Student:</h1>
+  <hr />
   @using (Html.BeginForm())
   {
-    @Html.LabelFor(model => model.StudentName)
-    @Html.TextBoxFor(model => model.StudentName)
+    @Html.LabelFor(model => model.StudentName)<br>
+    @Html.TextBoxFor(model => model.StudentName)<br><br>
 
-    @Html.LabelFor(model => model.EnrollmentDate)
-    @Html.TextBoxFor(model => model.EnrollmentDate, new {type="date"} )
+    @Html.LabelFor(model => model.EnrollmentDate)<br>
+    @Html.TextBoxFor(model => model.EnrollmentDate, new {type="date"} )<br><br>
 
-    @Html.Label("Enroll in Course")
-    @Html.DropDownList("CourseId")
+    @Html.Label("Enroll in Course")<br>
+    @Html.DropDownList("CourseId")<br>
 
-    <input type="submit" value="Enroll new Student" class="btn btn-default"/>
+    <br><input type="submit" value="Enroll" class="btn btn-default"/>
   }
-  <p>@Html.ActionLink("Show all Students", "Index")</p>
+  <br><p>@Html.ActionLink("Show Enrollments", "Index")</p>
 </div>

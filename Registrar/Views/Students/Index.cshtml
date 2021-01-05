@@ -7,6 +7,7 @@
   @model List<Registrar.Models.Student>;
 
   <h1>Current Students</h1>
+  <hr />
 
   @if (@Model.Count == 0)
   {
@@ -18,6 +19,6 @@
     <li>@Html.ActionLink($"{student.StudentName}", "Details", new { id = student.StudentId }) </li>
   }
 
-  <p>@Html.ActionLink("Enroll new student", "Create")</p>
+  <br><p>@Html.ActionLink("Enroll new student", "Create")</p>
   <p>@Html.ActionLink("Back to Homepage", "Index", "Home")</p>
 </div>

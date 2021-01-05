@@ -6,7 +6,7 @@
   @model List<Registrar.Models.Course>;
 
   <h1>Courses</h1>
-
+  <hr />
   @if (@Model.Count == 0)
   {
     <h3>No courses have been added yet.</h3>
@@ -18,10 +18,10 @@
     @using (Html.BeginForm("Delete", "Courses", FormMethod.Get))
       {
         @Html.Hidden("id", @course.CourseId)
-        <input type="submit" value="Delete"/>
+        <input type="submit" value="Remove Course"/>
       }
   }
-  <p>@Html.ActionLink("Add new course", "Create")</p>
+  <br><p>@Html.ActionLink("Add new course", "Create")</p>
 
   <p>@Html.ActionLink("Home", "Index", "Home")</p>
 </div>

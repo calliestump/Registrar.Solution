@@ -6,22 +6,22 @@
 
   <h2>Edit Student Information</h2>
   <hr />
-  <h4>Edit this Student Profile: @Html.DisplayFor(model => model.StudentName)</h4>
+  <h4>Student Profile: @Html.DisplayFor(model => model.StudentName)</h4>
 
   @using (Html.BeginForm())
   {
     @Html.HiddenFor(model => model.StudentId)
 
-    @Html.LabelFor(model => model.StudentName)
-    @Html.TextBoxFor(model => model.StudentName)
+    @Html.LabelFor(model => model.StudentName)<br>
+    @Html.TextBoxFor(model => model.StudentName)<br><br>
 
-    @Html.LabelFor(model => model.EnrollmentDate)
-    @Html.TextBoxFor(model => model.EnrollmentDate, new {type="date"} )
+    @Html.LabelFor(model => model.EnrollmentDate)<br>
+    @Html.TextBoxFor(model => model.EnrollmentDate, new {type="date"} )<br><br>
 
-    @Html.Label("Enroll in Course")
+    @Html.Label("Enroll in Course")<br>
     @Html.DropDownList("CourseId")
 
-    <input type="submit" value="Save" />
+    <br><br><input type="submit" value="Save" />
   }
-  <p>@Html.ActionLink("Back to Student list", "Index")</p>
+  <br><p>@Html.ActionLink("Back to Student list", "Index")</p>
 </div>
