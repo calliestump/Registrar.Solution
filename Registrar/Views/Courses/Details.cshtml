@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+<div class="container">
+  @model Registrar.Models.Course;
+
+  <h2>Course Details</h2>
+  <hr />
+  <h3>@Html.DisplayNameFor(model => model.CourseId): @Html.DisplayFor(model => model.CourseName)</h3>
+
+  @if(@Model.Students.Count == 0)
+  {
+    <p>This course currently has no registered students.</p>
+  } 
+  else 
+  {
+    <h4>Registered students in this course contains:</h4>
+    <ul>
+      @foreach(var join in Model.Students)
+      {
+        <li>@join.Student.StudentName</li>
+      }
+    </ul>
+  }
+  <p>@Html.ActionLink("Edit Course Information", "Edit")</p>
+</div>

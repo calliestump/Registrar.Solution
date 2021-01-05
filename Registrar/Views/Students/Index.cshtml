@@ -1,22 +1,23 @@
 @{
   Layout = "_Layout";
 }
+<div class="container">
+  @using Registrar.Models;
 
-@using Registrar.Models;
+  @model List<Registrar.Models.Student>;
 
-@model List<Registrar.Models.Student>;
+  <h1>Current Students</h1>
 
-<h1>Current Students</h1>
+  @if (@Model.Count == 0)
+  {
+    <h3>There are no students enrolled.</h3>
+  }
 
-@if (@Model.Count == 0)
-{
-  <h3>There are no students enrolled.</h3>
-}
+  @foreach (Student student in Model)
+  {
+    <li>@Html.ActionLink($"{student.StudentName}", "Details", new { id = student.StudentId }) </li>
+  }
 
-@foreach (Student student in Model)
-{
-  <li>@Html.ActionLink($"{student.StudentName}", "Details", new { id = student.StudentId }) </li>
-}
-
-<p>@Html.ActionLink("Enroll new student", "Create")</p>
-<p>@Html.ActionLink("Back to Homepage", "Index", "Home")</p>
+  <p>@Html.ActionLink("Enroll new student", "Create")</p>
+  <p>@Html.ActionLink("Back to Homepage", "Index", "Home")</p>
+</div>
