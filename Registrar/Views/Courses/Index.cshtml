@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-<div class="container">
+<div class="container"> 
   @using Registrar.Models;
   @model List<Registrar.Models.Course>;
 
@@ -15,10 +15,13 @@
   @foreach (Course course in Model)
   {
     <li>@Html.ActionLink($"{course.CourseName}", "Details", new { id = course.CourseId })</li>
+    @using (Html.BeginForm("Delete", "Courses", FormMethod.Get))
+      {
+        @Html.Hidden("id", @course.CourseId)
+        <input type="submit" value="Delete"/>
+      }
   }
   <p>@Html.ActionLink("Add new course", "Create")</p>
-
-  <p>@Html.ActionLink("Edit Course Information", "Edit")</p>
 
   <p>@Html.ActionLink("Home", "Index", "Home")</p>
 </div>

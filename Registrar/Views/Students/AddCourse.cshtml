@@ -1,8 +1,10 @@
 @{
   Layout = "_Layout";
 }
+
 <div class="container">
   @model Registrar.Models.Student
+
 
   <h2>Enroll in a course:</h2>
 
@@ -12,8 +14,8 @@
   {
     @Html.HiddenFor(model => model.StudentId)
 
-    @Html.Label("Enroll in Course")
-    @Html.DropDownList("CourseId")
+    @Html.Label("Enroll in Course")<br>
+    @Html.DropDownList("CourseId")<br><br>
 
     <input type="submit" value="Save"/>
   }

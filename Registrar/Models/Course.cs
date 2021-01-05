@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using System;
 namespace Registrar.Models
 {
   public class Course
@@ -12,6 +12,6 @@ namespace Registrar.Models
     public string CourseName { get; set; }
     public string CourseNumber { get; set; }
 
-    public virtual ICollection<CourseStudent> Students { get; set;}
+    public virtual ICollection<CourseStudent> Students { get; set; }
   }
 }

@@ -14,7 +14,7 @@
   } 
   else 
   {
-    <h4>Registered students in this course contains:</h4>
+    <h4><u>Registered Students</u></h4>
     <ul>
       @foreach(var join in Model.Students)
       {
@@ -22,5 +22,5 @@
       }
     </ul>
   }
-  <p>@Html.ActionLink("Edit Course Information", "Edit")</p>
+  <p>@Html.ActionLink("Edit Course Information", "Edit", new { id = Model.CourseId })</p>
 </div>

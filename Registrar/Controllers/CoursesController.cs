@@ -3,6 +3,7 @@ using Registrar.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Registrar.Controllers
 {
@@ -43,9 +44,11 @@ namespace Registrar.Controllers
       var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
       return View(thisCourse);
     }
+    
     [HttpPost]
     public ActionResult Edit(Course course)
     {
+  
       _db.Entry(course).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -63,7 +66,14 @@ namespace Registrar.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [HttpPost]
+    public ActionResult DeleteCourse(int joinId)
+    {
+      var joinEntry = _db.CourseStudent.FirstOrDefault(entry => entry.CourseStudentId == joinId);
+      _db.CourseStudent.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
     
     
   }

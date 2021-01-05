@@ -4,9 +4,9 @@
 <div class="container">
   @model Registrar.Models.Course
 
-  <h2>Edit</h2>
-
-  <h4>Edit this course: @Html.DisplayNameFor(model => model.CourseName)</h4>
+  <h2>Course Adjustments</h2>
+  <hr />
+  <h4>Edit Course: @Html.DisplayFor(model => model.CourseName)</h4>
 
   @using (Html.BeginForm())
   {
@@ -20,5 +20,5 @@
 
       <input type="submit" value="Save" />
   }
-  <p>@Html.ActionLink("Back to courses", "Index")</p>
+  <p>@Html.ActionLink("Back to courses", "Index"))</p>
 </div>
