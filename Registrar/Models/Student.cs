@@ -9,6 +9,7 @@ namespace Registrar.Models
     public Student()
     {
       this.Courses = new HashSet<CourseStudent>();
+      //this.Departments = new HashSet<DepartmentCourseStudent>();
     }
     public int StudentId { get; set; }
     public string StudentName { get; set; }
@@ -17,6 +18,8 @@ namespace Registrar.Models
     public DateTime EnrollmentDate { get; set; }
     
     public ICollection<CourseStudent> Courses { get; }
-    public virtual ICollection<DepartmentCourseStudent> Departments { get; set; }
+    public int DepartmentId { get; set ; }
+    // public virtual Department Department { get; set; }
+    //public virtual ICollection<DepartmentCourseStudent> Departments { get; set; }
   }
 }
